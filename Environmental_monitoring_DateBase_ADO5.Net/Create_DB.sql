@@ -17,4 +17,4 @@ CREATE TABLE Emission
 
 	CONSTRAINT PK_Emission_IDEmission PRIMARY KEY(ID_Emission),
 	CONSTRAINT FK_Emission_IDSource FOREIGN KEY(ID_Source) REFERENCES Source(ID_Source)
-);
+); 
