@@ -102,5 +102,37 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             }
 
         }
+
+        private void buttonDeleteSource_Click(object sender, EventArgs e)
+        {
+            int index, n;
+            string ID_Source;
+            string name, addres;
+
+            string SqlText = "";
+
+            n = dataGridViewSource.Rows.Count;
+
+            if (n == 1) return;
+
+            FormDeleteSource formDelete = new FormDeleteSource();
+
+            index = dataGridViewSource.CurrentRow.Index;
+            ID_Source = dataGridViewSource[0, index].Value.ToString();
+
+            SqlText = $"DELETE FROM Source " +
+                      $"WHERE ID_Source = {ID_Source}";
+
+            name = dataGridViewSource[1, index].Value.ToString();
+            addres = dataGridViewSource[2, index].Value.ToString();
+
+            formDelete.FormDeleteSourcelabel2.Text = $"{ID_Source} - {name} - {addres}";
+
+            if (formDelete.ShowDialog() == DialogResult.OK)
+            {
+                MyExecuteNonQuery(SqlText);
+                FillSource();
+            }
+        }
     }
 }
