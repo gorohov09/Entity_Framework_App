@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Environmental_monitoring_DateBase_ADO5.Net.Forms;
 
 namespace Environmental_monitoring_DateBase_ADO5.Net
 {
@@ -37,7 +38,7 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
 
         private void FillEmission()
         {
-            string sqlText = "SELECT * " +
+            string sqlText = "SELECT Name_Source, Addres, Count_Emission, Text_Emission, Date_Emission " +
                              "FROM Emission " +
                              "JOIN Source ON Emission.ID_Source = Source.ID_Source";
             SqlDataAdapter da = new SqlDataAdapter(sqlText, ConnStr);
@@ -46,6 +47,60 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             dataGridViewEmission.DataSource = ds.Tables["[Emission]"].DefaultView;
         }
 
-        
+        public void MyExecuteNonQuery(string SqlText)
+        {
+            SqlConnection con;
+            SqlCommand cmd;
+
+            con = new SqlConnection(ConnStr);
+            con.Open();
+            cmd = con.CreateCommand();
+            cmd.CommandText = SqlText;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        private void buttonAddSource_Click(object sender, EventArgs e)
+        {
+            string SqlText = "";
+            FormAddSource formAdd = new FormAddSource();
+
+            if (formAdd.ShowDialog() == DialogResult.OK)
+            {
+                SqlText = $"INSERT INTO Source VALUES (N'{formAdd.textBoxAddSource_NameSource.Text}', N'{formAdd.textBoxAddSource_AdresSource.Text}')";
+                MyExecuteNonQuery(SqlText);
+                FillSource();
+            }
+        }
+
+        private void buttonRedactSource_Click(object sender, EventArgs e)
+        {
+            int index, n;
+            string SqlText = "";
+            string ID_Source, name, addres;
+
+            n = dataGridViewSource.Rows.Count;
+            if (n == 1) return;
+
+            FormRedactSource formRedact = new FormRedactSource();
+
+            index = dataGridViewSource.CurrentRow.Index;
+            ID_Source = dataGridViewSource[0, index].Value.ToString();
+            name = dataGridViewSource[1, index].Value.ToString();
+            addres = dataGridViewSource[2, index].Value.ToString();
+
+            formRedact.textBoxRedactSource_NameSource.Text = name;
+            formRedact.textBoxRedactSource_AdresSource.Text = addres;
+
+            if (formRedact.ShowDialog() == DialogResult.OK)
+            {
+                SqlText = "UPDATE Source SET " +
+                    $"Name_Source = N'{formRedact.textBoxRedactSource_NameSource.Text}', Addres = N'{formRedact.textBoxRedactSource_AdresSource.Text}' " +
+                    $"WHERE ID_Source = {ID_Source}";
+                MyExecuteNonQuery(SqlText);
+                FillSource();
+            }
+
+        }
     }
 }
