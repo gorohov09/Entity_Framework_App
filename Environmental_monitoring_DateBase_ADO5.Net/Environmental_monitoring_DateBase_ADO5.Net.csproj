@@ -61,11 +61,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AverageEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AverageEmission.Designer.cs">
+      <DependentUpon>AverageEmission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddEmission.Designer.cs">
+      <DependentUpon>FormAddEmission.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAddSource.cs">
       <SubType>Form</SubType>
@@ -73,22 +85,73 @@
     <Compile Include="Forms\FormAddSource.Designer.cs">
       <DependentUpon>FormAddSource.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormDeleteEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDeleteEmission.Designer.cs">
+      <DependentUpon>FormDeleteEmission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDeleteSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDeleteSource.Designer.cs">
+      <DependentUpon>FormDeleteSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRedactEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRedactEmission.Designer.cs">
+      <DependentUpon>FormRedactEmission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormRedactSource.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormRedactSource.Designer.cs">
       <DependentUpon>FormRedactSource.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MaxEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MaxEmission.Designer.cs">
+      <DependentUpon>MaxEmission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MinEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MinEmission.Designer.cs">
+      <DependentUpon>MinEmission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AverageEmission.resx">
+      <DependentUpon>AverageEmission.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddEmission.resx">
+      <DependentUpon>FormAddEmission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddSource.resx">
       <DependentUpon>FormAddSource.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDeleteEmission.resx">
+      <DependentUpon>FormDeleteEmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDeleteSource.resx">
+      <DependentUpon>FormDeleteSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRedactEmission.resx">
+      <DependentUpon>FormRedactEmission.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRedactSource.resx">
       <DependentUpon>FormRedactSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MaxEmission.resx">
+      <DependentUpon>MaxEmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MinEmission.resx">
+      <DependentUpon>MinEmission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

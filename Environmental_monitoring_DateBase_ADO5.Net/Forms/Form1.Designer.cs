@@ -29,6 +29,10 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewSource = new System.Windows.Forms.DataGridView();
@@ -44,14 +48,14 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.источникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выбросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.расчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выбросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.расчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.минимальныеВыбросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.максимальныеВыбросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.средниеВыбросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,37 +93,69 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.dataGridViewSource.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewSource.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewSource.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSource.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSource.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewSource.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewSource.Location = new System.Drawing.Point(28, 78);
             this.dataGridViewSource.Name = "dataGridViewSource";
             this.dataGridViewSource.RowHeadersWidth = 51;
             this.dataGridViewSource.RowTemplate.Height = 24;
-            this.dataGridViewSource.Size = new System.Drawing.Size(713, 259);
+            this.dataGridViewSource.Size = new System.Drawing.Size(626, 259);
             this.dataGridViewSource.TabIndex = 2;
             // 
             // dataGridViewEmission
             // 
             this.dataGridViewEmission.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewEmission.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEmission.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEmission.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEmission.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewEmission.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewEmission.Location = new System.Drawing.Point(28, 389);
             this.dataGridViewEmission.Name = "dataGridViewEmission";
             this.dataGridViewEmission.RowHeadersWidth = 51;
             this.dataGridViewEmission.RowTemplate.Height = 24;
-            this.dataGridViewEmission.Size = new System.Drawing.Size(713, 244);
+            this.dataGridViewEmission.Size = new System.Drawing.Size(626, 244);
             this.dataGridViewEmission.TabIndex = 3;
             // 
             // buttonAddSource
             // 
             this.buttonAddSource.BackColor = System.Drawing.SystemColors.Info;
             this.buttonAddSource.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddSource.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddSource.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddSource.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonAddSource.Location = new System.Drawing.Point(811, 88);
+            this.buttonAddSource.Location = new System.Drawing.Point(739, 109);
             this.buttonAddSource.Name = "buttonAddSource";
-            this.buttonAddSource.Size = new System.Drawing.Size(259, 47);
+            this.buttonAddSource.Size = new System.Drawing.Size(218, 40);
             this.buttonAddSource.TabIndex = 4;
             this.buttonAddSource.Text = "Добавить источник";
             this.buttonAddSource.UseVisualStyleBackColor = false;
@@ -128,11 +164,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.buttonDelteEmission.BackColor = System.Drawing.SystemColors.Info;
             this.buttonDelteEmission.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDelteEmission.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelteEmission.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelteEmission.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonDelteEmission.Location = new System.Drawing.Point(811, 491);
+            this.buttonDelteEmission.Location = new System.Drawing.Point(740, 479);
             this.buttonDelteEmission.Name = "buttonDelteEmission";
-            this.buttonDelteEmission.Size = new System.Drawing.Size(259, 47);
+            this.buttonDelteEmission.Size = new System.Drawing.Size(217, 38);
             this.buttonDelteEmission.TabIndex = 5;
             this.buttonDelteEmission.Text = "Удалить выбросы";
             this.buttonDelteEmission.UseVisualStyleBackColor = false;
@@ -141,11 +177,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.buttonAddEmission.BackColor = System.Drawing.SystemColors.Info;
             this.buttonAddEmission.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddEmission.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddEmission.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddEmission.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonAddEmission.Location = new System.Drawing.Point(811, 417);
+            this.buttonAddEmission.Location = new System.Drawing.Point(740, 409);
             this.buttonAddEmission.Name = "buttonAddEmission";
-            this.buttonAddEmission.Size = new System.Drawing.Size(259, 47);
+            this.buttonAddEmission.Size = new System.Drawing.Size(217, 38);
             this.buttonAddEmission.TabIndex = 6;
             this.buttonAddEmission.Text = "Добавить выбросы";
             this.buttonAddEmission.UseVisualStyleBackColor = false;
@@ -154,11 +190,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.buttonRedactSource.BackColor = System.Drawing.SystemColors.Info;
             this.buttonRedactSource.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRedactSource.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRedactSource.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRedactSource.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonRedactSource.Location = new System.Drawing.Point(811, 238);
+            this.buttonRedactSource.Location = new System.Drawing.Point(740, 230);
             this.buttonRedactSource.Name = "buttonRedactSource";
-            this.buttonRedactSource.Size = new System.Drawing.Size(259, 47);
+            this.buttonRedactSource.Size = new System.Drawing.Size(217, 38);
             this.buttonRedactSource.TabIndex = 7;
             this.buttonRedactSource.Text = "Редактировать источник";
             this.buttonRedactSource.UseVisualStyleBackColor = false;
@@ -167,11 +203,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.buttonDeleteSource.BackColor = System.Drawing.SystemColors.Info;
             this.buttonDeleteSource.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteSource.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteSource.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteSource.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonDeleteSource.Location = new System.Drawing.Point(811, 165);
+            this.buttonDeleteSource.Location = new System.Drawing.Point(739, 166);
             this.buttonDeleteSource.Name = "buttonDeleteSource";
-            this.buttonDeleteSource.Size = new System.Drawing.Size(259, 47);
+            this.buttonDeleteSource.Size = new System.Drawing.Size(218, 39);
             this.buttonDeleteSource.TabIndex = 8;
             this.buttonDeleteSource.Text = "Удалить источник";
             this.buttonDeleteSource.UseVisualStyleBackColor = false;
@@ -180,11 +216,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.buttonRedactEmission.BackColor = System.Drawing.SystemColors.Info;
             this.buttonRedactEmission.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRedactEmission.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRedactEmission.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRedactEmission.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.buttonRedactEmission.Location = new System.Drawing.Point(811, 562);
+            this.buttonRedactEmission.Location = new System.Drawing.Point(739, 546);
             this.buttonRedactEmission.Name = "buttonRedactEmission";
-            this.buttonRedactEmission.Size = new System.Drawing.Size(259, 47);
+            this.buttonRedactEmission.Size = new System.Drawing.Size(218, 36);
             this.buttonRedactEmission.TabIndex = 9;
             this.buttonRedactEmission.Text = "Редактировать выбросы";
             this.buttonRedactEmission.UseVisualStyleBackColor = false;
@@ -193,11 +229,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Info;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button1.Location = new System.Drawing.Point(583, 658);
+            this.button1.Location = new System.Drawing.Point(494, 658);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 47);
+            this.button1.Size = new System.Drawing.Size(196, 47);
             this.button1.TabIndex = 10;
             this.button1.Text = "Средние выбросы";
             this.button1.UseVisualStyleBackColor = false;
@@ -206,11 +242,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Info;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button2.Location = new System.Drawing.Point(303, 658);
+            this.button2.Location = new System.Drawing.Point(255, 658);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(254, 47);
+            this.button2.Size = new System.Drawing.Size(213, 47);
             this.button2.TabIndex = 11;
             this.button2.Text = "Максимальные выбросы";
             this.button2.UseVisualStyleBackColor = false;
@@ -219,11 +255,11 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Info;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.MenuText;
             this.button3.Location = new System.Drawing.Point(28, 658);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(242, 47);
+            this.button3.Size = new System.Drawing.Size(195, 47);
             this.button3.TabIndex = 12;
             this.button3.Text = "Минимальные выбросы";
             this.button3.UseVisualStyleBackColor = false;
@@ -249,8 +285,26 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.удалитьToolStripMenuItem,
             this.редактироватьToolStripMenuItem});
             this.источникToolStripMenuItem.Name = "источникToolStripMenuItem";
-            this.источникToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.источникToolStripMenuItem.Size = new System.Drawing.Size(111, 26);
             this.источникToolStripMenuItem.Text = "Источник";
+            // 
+            // добавитьToolStripMenuItem
+            // 
+            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.добавитьToolStripMenuItem.Text = "Добавить";
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
+            // 
+            // редактироватьToolStripMenuItem
+            // 
+            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.редактироватьToolStripMenuItem.Text = "Редактировать";
             // 
             // выбросыToolStripMenuItem
             // 
@@ -259,8 +313,26 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.удалитьToolStripMenuItem1,
             this.редактироватьToolStripMenuItem1});
             this.выбросыToolStripMenuItem.Name = "выбросыToolStripMenuItem";
-            this.выбросыToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.выбросыToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.выбросыToolStripMenuItem.Text = "Выбросы";
+            // 
+            // добавитьToolStripMenuItem1
+            // 
+            this.добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
+            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(234, 26);
+            this.добавитьToolStripMenuItem1.Text = "Добавить";
+            // 
+            // удалитьToolStripMenuItem1
+            // 
+            this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
+            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(234, 26);
+            this.удалитьToolStripMenuItem1.Text = "Удалить";
+            // 
+            // редактироватьToolStripMenuItem1
+            // 
+            this.редактироватьToolStripMenuItem1.Name = "редактироватьToolStripMenuItem1";
+            this.редактироватьToolStripMenuItem1.Size = new System.Drawing.Size(234, 26);
+            this.редактироватьToolStripMenuItem1.Text = "Редактировать";
             // 
             // расчетToolStripMenuItem
             // 
@@ -269,61 +341,25 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.максимальныеВыбросыToolStripMenuItem,
             this.средниеВыбросыToolStripMenuItem});
             this.расчетToolStripMenuItem.Name = "расчетToolStripMenuItem";
-            this.расчетToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.расчетToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
             this.расчетToolStripMenuItem.Text = "Расчет";
-            // 
-            // добавитьToolStripMenuItem
-            // 
-            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.добавитьToolStripMenuItem.Text = "Добавить";
-            // 
-            // удалитьToolStripMenuItem
-            // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
-            // 
-            // редактироватьToolStripMenuItem
-            // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
-            // 
-            // добавитьToolStripMenuItem1
-            // 
-            this.добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
-            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.добавитьToolStripMenuItem1.Text = "Добавить";
-            // 
-            // удалитьToolStripMenuItem1
-            // 
-            this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
-            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.удалитьToolStripMenuItem1.Text = "Удалить";
-            // 
-            // редактироватьToolStripMenuItem1
-            // 
-            this.редактироватьToolStripMenuItem1.Name = "редактироватьToolStripMenuItem1";
-            this.редактироватьToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.редактироватьToolStripMenuItem1.Text = "Редактировать";
             // 
             // минимальныеВыбросыToolStripMenuItem
             // 
             this.минимальныеВыбросыToolStripMenuItem.Name = "минимальныеВыбросыToolStripMenuItem";
-            this.минимальныеВыбросыToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.минимальныеВыбросыToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
             this.минимальныеВыбросыToolStripMenuItem.Text = "Минимальные выбросы";
             // 
             // максимальныеВыбросыToolStripMenuItem
             // 
             this.максимальныеВыбросыToolStripMenuItem.Name = "максимальныеВыбросыToolStripMenuItem";
-            this.максимальныеВыбросыToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.максимальныеВыбросыToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
             this.максимальныеВыбросыToolStripMenuItem.Text = "Максимальные выбросы";
             // 
             // средниеВыбросыToolStripMenuItem
             // 
             this.средниеВыбросыToolStripMenuItem.Name = "средниеВыбросыToolStripMenuItem";
-            this.средниеВыбросыToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.средниеВыбросыToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
             this.средниеВыбросыToolStripMenuItem.Text = "Средние выбросы";
             // 
             // Form1
