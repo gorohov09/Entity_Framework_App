@@ -38,7 +38,7 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
 
         private void FillEmission()
         {
-            string sqlText = "SELECT Name_Source, Addres, Count_Emission, Text_Emission, Date_Emission " +
+            string sqlText = "SELECT ID_Emission, Name_Source, Addres, Count_Emission, Text_Emission, Date_Emission " +
                              "FROM Emission " +
                              "JOIN Source ON Emission.ID_Source = Source.ID_Source";
             SqlDataAdapter da = new SqlDataAdapter(sqlText, ConnStr);
@@ -58,6 +58,31 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             cmd.CommandText = SqlText;
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        /// <summary>
+        /// Редактирование даты, которую ввел пользователь, для выполнения SQL-скрипта
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public string RedactDateTime(string time)
+        {
+            //03.12.2002 -> 2002-12-03
+            string result = "";
+            string[] words = time.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = words.Length - 1; i >= 0; i--)
+            {
+                if (i == 0)
+                {
+                    result += $"{words[i]}";
+                }
+                else
+                {
+                    result += $"{words[i]}-";
+                }              
+            }
+
+            return result;
         }
 
         private void buttonAddSource_Click(object sender, EventArgs e)
@@ -132,6 +157,65 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             {
                 MyExecuteNonQuery(SqlText);
                 FillSource();
+                FillEmission();
+            }
+        }
+
+        private void buttonAddEmission_Click(object sender, EventArgs e)
+        {
+            int index;
+            string ID_Source, name, addres;
+
+            string SqlText = "";
+            FormAddEmission f = new FormAddEmission();
+
+            index = dataGridViewSource.CurrentRow.Index;
+            ID_Source = dataGridViewSource[0, index].Value.ToString();
+            name = dataGridViewSource[1, index].Value.ToString();
+            addres = dataGridViewSource[2, index].Value.ToString();
+            f.FormAddEmissionlabel4.Text += $" {name} - {addres}";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                string date = RedactDateTime(f.textBoxAddEmission_DateEmission.Text);
+                SqlText = "INSERT INTO Emission VALUES " +
+                    $"('{ID_Source}','{f.textBoxAddEmission_CountEmission.Text}', N'{f.textBoxAddEmission_TextEmission.Text}', N'{date}')";
+                MyExecuteNonQuery(SqlText);
+                FillEmission();
+            }
+        }
+
+        private void buttonRedactEmission_Click(object sender, EventArgs e)
+        {
+            int index, n;
+            string SqlText = "";
+            string ID_Emission, count, text, date;
+
+            n = dataGridViewEmission.Rows.Count;
+
+            if (n == 1) return;
+
+            index = dataGridViewEmission.CurrentRow.Index;
+            ID_Emission = dataGridViewEmission[0, index].Value.ToString();
+            count = dataGridViewEmission[3, index].Value.ToString();
+            text = dataGridViewEmission[4, index].Value.ToString();
+            date = dataGridViewEmission[5, index].Value.ToString();
+
+            FormRedactEmission f = new FormRedactEmission();
+            f.FormRedactEmissionlabel4.Text += $" {dataGridViewEmission[1, index].Value.ToString()} - {dataGridViewEmission[2, index].Value.ToString()}";
+            f.textBoxRedactEmission_CountEmission.Text = count;
+            f.textBoxRedactEmission_TextEmission.Text = text;
+            f.textBoxRedactEmission_DateEmission.Text = date;
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                SqlText = $"UPDATE Emission SET " +
+                          $"Count_Emission = '{f.textBoxRedactEmission_CountEmission.Text}', " +
+                          $"Text_Emission = N'{f.textBoxRedactEmission_TextEmission.Text}', " +
+                          $"Date_Emission = '{RedactDateTime(f.textBoxRedactEmission_DateEmission.Text)}' " +
+                          $"WHERE ID_Emission = {ID_Emission}";
+                MyExecuteNonQuery(SqlText);
+                FillEmission();
             }
         }
     }
