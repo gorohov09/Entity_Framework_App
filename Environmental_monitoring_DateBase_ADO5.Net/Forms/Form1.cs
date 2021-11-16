@@ -218,5 +218,36 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
                 FillEmission();
             }
         }
+
+        private void buttonDelteEmission_Click(object sender, EventArgs e)
+        {
+            int index, n;
+            string SqlText;
+            string ID_Emission, count, text, date, name_source, addres_source;
+
+            n = dataGridViewEmission.Rows.Count;
+            if (n == 1) return;
+
+            index = dataGridViewEmission.CurrentRow.Index;
+
+            index = dataGridViewEmission.CurrentRow.Index;
+            ID_Emission = dataGridViewEmission[0, index].Value.ToString();
+            name_source = dataGridViewEmission[1, index].Value.ToString();
+            addres_source = dataGridViewEmission[2, index].Value.ToString();
+            count = dataGridViewEmission[3, index].Value.ToString();
+            text = dataGridViewEmission[4, index].Value.ToString();
+            date = dataGridViewEmission[5, index].Value.ToString();
+
+            FormDeleteEmission f = new FormDeleteEmission();
+            f.FormDeleteEmissionlabel3.Text = $"{name_source} - {addres_source} - {count} - {text}";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                SqlText = $"DELETE FROM Emission " +
+                          $"WHERE ID_Emission = {ID_Emission}";
+                MyExecuteNonQuery(SqlText);
+                FillEmission();                         
+            }
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace Environmental_monitoring_DateBase_ADO5.Net.Forms
             // 
             // buttonFormDeleteEmissionNo
             // 
-            this.buttonFormDeleteEmissionNo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonFormDeleteEmissionNo.BackColor = System.Drawing.SystemColors.Info;
             this.buttonFormDeleteEmissionNo.DialogResult = System.Windows.Forms.DialogResult.No;
             this.buttonFormDeleteEmissionNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFormDeleteEmissionNo.Location = new System.Drawing.Point(206, 122);
@@ -69,7 +69,7 @@ namespace Environmental_monitoring_DateBase_ADO5.Net.Forms
             // 
             // buttonFormDeleteEmissionYes
             // 
-            this.buttonFormDeleteEmissionYes.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonFormDeleteEmissionYes.BackColor = System.Drawing.SystemColors.Info;
             this.buttonFormDeleteEmissionYes.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonFormDeleteEmissionYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFormDeleteEmissionYes.Location = new System.Drawing.Point(35, 122);
@@ -83,7 +83,7 @@ namespace Environmental_monitoring_DateBase_ADO5.Net.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 197);
+            this.ClientSize = new System.Drawing.Size(433, 197);
             this.Controls.Add(this.buttonFormDeleteEmissionYes);
             this.Controls.Add(this.buttonFormDeleteEmissionNo);
             this.Controls.Add(this.label2);
