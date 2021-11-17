@@ -29,10 +29,10 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewSource = new System.Windows.Forms.DataGridView();
@@ -43,9 +43,9 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.buttonRedactSource = new System.Windows.Forms.Button();
             this.buttonDeleteSource = new System.Windows.Forms.Button();
             this.buttonRedactEmission = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonAvgEmission = new System.Windows.Forms.Button();
+            this.buttonMaxEmission = new System.Windows.Forms.Button();
+            this.buttonMinEmission = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.источникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,23 +93,23 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.dataGridViewSource.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewSource.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewSource.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSource.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSource.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSource.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSource.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewSource.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewSource.Location = new System.Drawing.Point(28, 78);
             this.dataGridViewSource.Name = "dataGridViewSource";
@@ -122,23 +122,23 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             // 
             this.dataGridViewEmission.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewEmission.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEmission.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEmission.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewEmission.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEmission.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEmission.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewEmission.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewEmission.Location = new System.Drawing.Point(28, 389);
             this.dataGridViewEmission.Name = "dataGridViewEmission";
@@ -231,44 +231,47 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.buttonRedactEmission.UseVisualStyleBackColor = false;
             this.buttonRedactEmission.Click += new System.EventHandler(this.buttonRedactEmission_Click);
             // 
-            // button1
+            // buttonAvgEmission
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Info;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button1.Location = new System.Drawing.Point(494, 658);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 47);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Средние выбросы";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonAvgEmission.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonAvgEmission.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAvgEmission.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAvgEmission.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.buttonAvgEmission.Location = new System.Drawing.Point(494, 658);
+            this.buttonAvgEmission.Name = "buttonAvgEmission";
+            this.buttonAvgEmission.Size = new System.Drawing.Size(196, 47);
+            this.buttonAvgEmission.TabIndex = 10;
+            this.buttonAvgEmission.Text = "Средние выбросы";
+            this.buttonAvgEmission.UseVisualStyleBackColor = false;
+            this.buttonAvgEmission.Click += new System.EventHandler(this.buttonAvgEmission_Click);
             // 
-            // button2
+            // buttonMaxEmission
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button2.Location = new System.Drawing.Point(255, 658);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(213, 47);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Максимальные выбросы";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonMaxEmission.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonMaxEmission.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMaxEmission.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMaxEmission.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.buttonMaxEmission.Location = new System.Drawing.Point(255, 658);
+            this.buttonMaxEmission.Name = "buttonMaxEmission";
+            this.buttonMaxEmission.Size = new System.Drawing.Size(213, 47);
+            this.buttonMaxEmission.TabIndex = 11;
+            this.buttonMaxEmission.Text = "Максимальные выбросы";
+            this.buttonMaxEmission.UseVisualStyleBackColor = false;
+            this.buttonMaxEmission.Click += new System.EventHandler(this.buttonMaxEmission_Click);
             // 
-            // button3
+            // buttonMinEmission
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Info;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button3.Location = new System.Drawing.Point(28, 658);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(195, 47);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Минимальные выбросы";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonMinEmission.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonMinEmission.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMinEmission.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMinEmission.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.buttonMinEmission.Location = new System.Drawing.Point(28, 658);
+            this.buttonMinEmission.Name = "buttonMinEmission";
+            this.buttonMinEmission.Size = new System.Drawing.Size(195, 47);
+            this.buttonMinEmission.TabIndex = 12;
+            this.buttonMinEmission.Text = "Минимальные выбросы";
+            this.buttonMinEmission.UseVisualStyleBackColor = false;
+            this.buttonMinEmission.Click += new System.EventHandler(this.buttonMinEmission_Click);
             // 
             // menuStrip1
             // 
@@ -374,9 +377,9 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1026, 733);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonMinEmission);
+            this.Controls.Add(this.buttonMaxEmission);
+            this.Controls.Add(this.buttonAvgEmission);
             this.Controls.Add(this.buttonRedactEmission);
             this.Controls.Add(this.buttonDeleteSource);
             this.Controls.Add(this.buttonRedactSource);
@@ -415,9 +418,9 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
         private System.Windows.Forms.Button buttonRedactSource;
         private System.Windows.Forms.Button buttonDeleteSource;
         private System.Windows.Forms.Button buttonRedactEmission;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonAvgEmission;
+        private System.Windows.Forms.Button buttonMaxEmission;
+        private System.Windows.Forms.Button buttonMinEmission;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem источникToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;

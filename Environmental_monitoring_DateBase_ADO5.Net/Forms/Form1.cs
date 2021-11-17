@@ -249,5 +249,56 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
                 FillEmission();                         
             }
         }
+
+        private void buttonMinEmission_Click(object sender, EventArgs e)
+        {
+            string SqlText = $"SELECT Name_Source, MIN(Count_Emission) AS \'Минимальные выбросы\' " +
+                             $"FROM Emission " +
+                             $"JOIN Source ON Emission.ID_Source = Source.ID_Source " +
+                             $"GROUP BY Name_Source " +
+                             $"ORDER BY MIN(Count_Emission)";
+
+            MinEmission f = new MinEmission();
+
+            SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Emission");
+            f.dataGridViewMinEmission.DataSource = ds.Tables["Emission"].DefaultView;
+            f.ShowDialog();
+        }
+
+        private void buttonMaxEmission_Click(object sender, EventArgs e)
+        {
+            string SqlText = $"SELECT Name_Source, MAX(Count_Emission) AS \'Максимальные выбросы\' " +
+                             $"FROM Emission " +
+                             $"JOIN Source ON Emission.ID_Source = Source.ID_Source " +
+                             $"GROUP BY Name_Source " +
+                             $"ORDER BY MIN(Count_Emission)";
+
+            MaxEmission f = new MaxEmission();
+
+            SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Emission");
+            f.dataGridViewMaxEmission.DataSource = ds.Tables["Emission"].DefaultView;
+            f.ShowDialog();
+        }
+
+        private void buttonAvgEmission_Click(object sender, EventArgs e)
+        {
+            string SqlText = $"SELECT Name_Source, AVG(Count_Emission) AS \'Средние выбросы\' " +
+                             $"FROM Emission " +
+                             $"JOIN Source ON Emission.ID_Source = Source.ID_Source " +
+                             $"GROUP BY Name_Source " +
+                             $"ORDER BY MIN(Count_Emission)";
+
+            AverageEmission f = new AverageEmission();
+
+            SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Emission");
+            f.dataGridViewAverageEmission.DataSource = ds.Tables["Emission"].DefaultView;
+            f.ShowDialog();
+        }
     }
 }
