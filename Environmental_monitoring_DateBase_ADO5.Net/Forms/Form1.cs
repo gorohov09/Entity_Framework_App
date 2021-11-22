@@ -42,26 +42,17 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
 
         private void FillEmission()
         {
-            //string sqlText = "SELECT ID_Emission, Name_Source, Addres, Count_Emission, Text_Emission, Date_Emission " +
-            //                 "FROM Emission " +
-            //                 "JOIN Source ON Emission.ID_Source = Source.ID_Source";
-            //SqlDataAdapter da = new SqlDataAdapter(sqlText, ConnStr);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds, "[Emission]");
-            //dataGridViewEmission.DataSource = ds.Tables["[Emission]"].DefaultView;
-        }
-
-        public void MyExecuteNonQuery(string SqlText)
-        {
-            //SqlConnection con;
-            //SqlCommand cmd;
-
-            //con = new SqlConnection(ConnStr);
-            //con.Open();
-            //cmd = con.CreateCommand();
-            //cmd.CommandText = SqlText;
-            //cmd.ExecuteNonQuery();
-            //con.Close();
+            MyDbContext context = new MyDbContext();
+            var emission = from x in context.Emissions
+                           select new
+                           {
+                               Id = x.Id,
+                               Name_Source = x.Source.Name,
+                               Count = x.Count,
+                               Text = x.Text,
+                               Date = x.Date
+                           };
+            dataGridViewEmission.DataSource = emission.ToList();
         }
 
         /// <summary>
@@ -173,26 +164,32 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
 
         private void buttonAddEmission_Click(object sender, EventArgs e)
         {
-            //int index;
-            //string ID_Source, name, addres;
+            int index;
+            string ID_Source, name, addres;
 
-            //string SqlText = "";
-            //FormAddEmission f = new FormAddEmission();
+            FormAddEmission f = new FormAddEmission();
 
-            //index = dataGridViewSource.CurrentRow.Index;
-            //ID_Source = dataGridViewSource[0, index].Value.ToString();
-            //name = dataGridViewSource[1, index].Value.ToString();
-            //addres = dataGridViewSource[2, index].Value.ToString();
-            //f.FormAddEmissionlabel4.Text += $" {name} - {addres}";
+            index = dataGridViewSource.CurrentRow.Index;
+            ID_Source = dataGridViewSource[0, index].Value.ToString();
+            name = dataGridViewSource[1, index].Value.ToString();
+            addres = dataGridViewSource[2, index].Value.ToString();
+            f.FormAddEmissionlabel4.Text += $" {name} - {addres}";
 
-            //if (f.ShowDialog() == DialogResult.OK)
-            //{
-            //    string date = RedactDateTime(f.textBoxAddEmission_DateEmission.Text);
-            //    SqlText = "INSERT INTO Emission VALUES " +
-            //        $"('{ID_Source}','{f.textBoxAddEmission_CountEmission.Text}', N'{f.textBoxAddEmission_TextEmission.Text}', N'{date}')";
-            //    MyExecuteNonQuery(SqlText);
-            //    FillEmission();
-            //}
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                string date = RedactDateTime(f.textBoxAddEmission_DateEmission.Text);
+                MyDbContext context = new MyDbContext();
+                Emission emission = new Emission()
+                {
+                    SourceId = Convert.ToInt32(ID_Source),
+                    Count = Convert.ToInt32(f.textBoxAddEmission_CountEmission.Text),
+                    Text = f.textBoxAddEmission_TextEmission.Text,
+                    Date = DateTime.ParseExact(date, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture)
+                };
+                context.Emissions.Add(emission);
+                context.SaveChanges();
+                FillEmission();
+            }
         }
 
         private void buttonRedactEmission_Click(object sender, EventArgs e)
