@@ -100,66 +100,69 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
 
         private void buttonRedactSource_Click(object sender, EventArgs e)
         {
-            //int index, n;
-            //string SqlText = "";
-            //string ID_Source, name, addres;
+            int index, n, ID_Source;
+            string SqlText = "";
+            string name, addres;
 
-            //n = dataGridViewSource.Rows.Count;
-            //if (n == 1) return;
+            n = dataGridViewSource.Rows.Count;
+            if (n == 0) return;
 
-            //FormRedactSource formRedact = new FormRedactSource();
+            FormRedactSource formRedact = new FormRedactSource();
 
-            //index = dataGridViewSource.CurrentRow.Index;
-            //ID_Source = dataGridViewSource[0, index].Value.ToString();
-            //name = dataGridViewSource[1, index].Value.ToString();
-            //addres = dataGridViewSource[2, index].Value.ToString();
+            index = dataGridViewSource.CurrentRow.Index;
+            ID_Source = Convert.ToInt32(dataGridViewSource[0, index].Value.ToString());
+            name = dataGridViewSource[1, index].Value.ToString();
+            addres = dataGridViewSource[2, index].Value.ToString();
 
-            //formRedact.textBoxRedactSource_NameSource.Text = name;
-            //formRedact.textBoxRedactSource_AdresSource.Text = addres;
+            formRedact.textBoxRedactSource_NameSource.Text = name;
+            formRedact.textBoxRedactSource_AdresSource.Text = addres;
 
-            //if (formRedact.ShowDialog() == DialogResult.OK)
-            //{
-            //    SqlText = "UPDATE Source SET " +
-            //        $"Name_Source = N'{formRedact.textBoxRedactSource_NameSource.Text}', Addres = N'{formRedact.textBoxRedactSource_AdresSource.Text}' " +
-            //        $"WHERE ID_Source = {ID_Source}";
-            //    MyExecuteNonQuery(SqlText);
-            //    FillSource();
-            //    FillEmission();
-            //}
+            if (formRedact.ShowDialog() == DialogResult.OK)
+            {
+                MyDbContext context = new MyDbContext();
+                var source = context.Sources.SingleOrDefault(x => x.Id == ID_Source);
+                if (source != null)
+                {
+                    source.Name = formRedact.textBoxRedactSource_NameSource.Text;
+                    source.Address = formRedact.textBoxRedactSource_AdresSource.Text;
+                }
+                context.SaveChanges();
+                FillSource();
+                FillEmission();
+            }
 
         }
 
         private void buttonDeleteSource_Click(object sender, EventArgs e)
         {
-            //int index, n;
-            //string ID_Source;
-            //string name, addres;
+            int index, n, ID_Source;
+            string name, addres;
 
-            //string SqlText = "";
+            string SqlText = "";
 
-            //n = dataGridViewSource.Rows.Count;
+            n = dataGridViewSource.Rows.Count;
 
-            //if (n == 1) return;
+            if (n == 0) return;
 
-            //FormDeleteSource formDelete = new FormDeleteSource();
+            FormDeleteSource formDelete = new FormDeleteSource();
 
-            //index = dataGridViewSource.CurrentRow.Index;
-            //ID_Source = dataGridViewSource[0, index].Value.ToString();
+            index = dataGridViewSource.CurrentRow.Index;
+            ID_Source = Convert.ToInt32(dataGridViewSource[0, index].Value.ToString());
 
-            //SqlText = $"DELETE FROM Source " +
-            //          $"WHERE ID_Source = {ID_Source}";
+            name = dataGridViewSource[1, index].Value.ToString();
+            addres = dataGridViewSource[2, index].Value.ToString();
 
-            //name = dataGridViewSource[1, index].Value.ToString();
-            //addres = dataGridViewSource[2, index].Value.ToString();
+            formDelete.FormDeleteSourcelabel2.Text = $"{ID_Source} - {name} - {addres}";
 
-            //formDelete.FormDeleteSourcelabel2.Text = $"{ID_Source} - {name} - {addres}";
-
-            //if (formDelete.ShowDialog() == DialogResult.OK)
-            //{
-            //    MyExecuteNonQuery(SqlText);
-            //    FillSource();
-            //    FillEmission();
-            //}
+            if (formDelete.ShowDialog() == DialogResult.OK)
+            {
+                MyDbContext context = new MyDbContext();
+                var source = context.Sources.SingleOrDefault(x => x.Id == ID_Source);
+                context.Sources.Remove(source);
+                context.SaveChanges();
+                FillSource();
+                FillEmission();
+            }
         }
 
         private void buttonAddEmission_Click(object sender, EventArgs e)
@@ -194,118 +197,123 @@ namespace Environmental_monitoring_DateBase_ADO5.Net
 
         private void buttonRedactEmission_Click(object sender, EventArgs e)
         {
-            //int index, n;
-            //string SqlText = "";
-            //string ID_Emission, count, text, date;
+            int index, n, ID_Emission;
+            string count, text, date;
 
-            //n = dataGridViewEmission.Rows.Count;
+            n = dataGridViewEmission.Rows.Count;
 
-            //if (n == 1) return;
+            if (n == 0) return;
 
-            //index = dataGridViewEmission.CurrentRow.Index;
-            //ID_Emission = dataGridViewEmission[0, index].Value.ToString();
-            //count = dataGridViewEmission[3, index].Value.ToString();
-            //text = dataGridViewEmission[4, index].Value.ToString();
-            //date = dataGridViewEmission[5, index].Value.ToString();
+            index = dataGridViewEmission.CurrentRow.Index;
+            ID_Emission = Convert.ToInt32(dataGridViewEmission[0, index].Value.ToString());
+            count = dataGridViewEmission[2, index].Value.ToString();
+            text = dataGridViewEmission[3, index].Value.ToString();
+            date = dataGridViewEmission[4, index].Value.ToString();
 
-            //FormRedactEmission f = new FormRedactEmission();
-            //f.FormRedactEmissionlabel4.Text += $" {dataGridViewEmission[1, index].Value.ToString()} - {dataGridViewEmission[2, index].Value.ToString()}";
-            //f.textBoxRedactEmission_CountEmission.Text = count;
-            //f.textBoxRedactEmission_TextEmission.Text = text;
-            //f.textBoxRedactEmission_DateEmission.Text = date;
+            FormRedactEmission f = new FormRedactEmission();
+            f.FormRedactEmissionlabel4.Text += $" {dataGridViewEmission[1, index].Value.ToString()} - {dataGridViewEmission[2, index].Value.ToString()}";
+            f.textBoxRedactEmission_CountEmission.Text = count;
+            f.textBoxRedactEmission_TextEmission.Text = text;
+            f.textBoxRedactEmission_DateEmission.Text = date;
 
-            //if (f.ShowDialog() == DialogResult.OK)
-            //{
-            //    SqlText = $"UPDATE Emission SET " +
-            //              $"Count_Emission = '{f.textBoxRedactEmission_CountEmission.Text}', " +
-            //              $"Text_Emission = N'{f.textBoxRedactEmission_TextEmission.Text}', " +
-            //              $"Date_Emission = '{RedactDateTime(f.textBoxRedactEmission_DateEmission.Text)}' " +
-            //              $"WHERE ID_Emission = {ID_Emission}";
-            //    MyExecuteNonQuery(SqlText);
-            //    FillEmission();
-            //}
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                MyDbContext context = new MyDbContext();
+                var emission = context.Emissions.SingleOrDefault(x => x.Id == ID_Emission);
+                emission.Count = Convert.ToInt32(f.textBoxRedactEmission_CountEmission.Text);
+                emission.Text = f.textBoxRedactEmission_TextEmission.Text;
+                date = RedactDateTime(f.textBoxRedactEmission_DateEmission.Text);
+                emission.Date = DateTime.ParseExact(date, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                context.SaveChanges();
+                FillEmission();
+            }
         }
 
         private void buttonDelteEmission_Click(object sender, EventArgs e)
         {
-            //int index, n;
-            //string SqlText;
-            //string ID_Emission, count, text, date, name_source, addres_source;
+            int index, n, ID_Emission, count;
+            string text, date, name_source;
 
-            //n = dataGridViewEmission.Rows.Count;
-            //if (n == 1) return;
+            n = dataGridViewEmission.Rows.Count;
+            if (n == 0) return;
 
-            //index = dataGridViewEmission.CurrentRow.Index;
+            index = dataGridViewEmission.CurrentRow.Index;
 
-            //index = dataGridViewEmission.CurrentRow.Index;
-            //ID_Emission = dataGridViewEmission[0, index].Value.ToString();
-            //name_source = dataGridViewEmission[1, index].Value.ToString();
-            //addres_source = dataGridViewEmission[2, index].Value.ToString();
-            //count = dataGridViewEmission[3, index].Value.ToString();
-            //text = dataGridViewEmission[4, index].Value.ToString();
-            //date = dataGridViewEmission[5, index].Value.ToString();
+            index = dataGridViewEmission.CurrentRow.Index;
+            ID_Emission = Convert.ToInt32(dataGridViewEmission[0, index].Value.ToString());
+            name_source = dataGridViewEmission[1, index].Value.ToString();
+            count = Convert.ToInt32(dataGridViewEmission[2, index].Value.ToString());
+            text = dataGridViewEmission[3, index].Value.ToString();
+            date = dataGridViewEmission[4, index].Value.ToString();
 
-            //FormDeleteEmission f = new FormDeleteEmission();
-            //f.FormDeleteEmissionlabel3.Text = $"{name_source} - {addres_source} - {count} - {text}";
+            FormDeleteEmission f = new FormDeleteEmission();
+            f.FormDeleteEmissionlabel3.Text = $"{name_source} - {count} - {text} - {date}";
 
-            //if (f.ShowDialog() == DialogResult.OK)
-            //{
-            //    SqlText = $"DELETE FROM Emission " +
-            //              $"WHERE ID_Emission = {ID_Emission}";
-            //    MyExecuteNonQuery(SqlText);
-            //    FillEmission();                         
-            //}
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                MyDbContext context = new MyDbContext();
+                var emission = context.Emissions.SingleOrDefault(x => x.Id == ID_Emission);
+                context.Emissions.Remove(emission);
+                context.SaveChanges();
+                FillEmission();
+            }
         }
 
         private void buttonMinEmission_Click(object sender, EventArgs e)
         {
-            //string SqlText = $"SELECT Name_Source, MIN(Count_Emission) AS \'Минимальные выбросы\' " +
-            //                 $"FROM Emission " +
-            //                 $"JOIN Source ON Emission.ID_Source = Source.ID_Source " +
-            //                 $"GROUP BY Name_Source " +
-            //                 $"ORDER BY MIN(Count_Emission)";
+            MinEmission f = new MinEmission();
 
-            //MinEmission f = new MinEmission();
+            MyDbContext context = new MyDbContext();
+            var min_sources = from s in context.Sources
+                              join x in context.Emissions on s.Id equals x.SourceId
+                              group new { s, x } by new { s.Id, s.Name }
+                              into g
+                              select new
+                              {
+                                  Name_Source = g.Key.Name,
+                                  Min_Emission = g.Min(t => t.x.Count)
+                              };
 
-            //SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds, "Emission");
-            //f.dataGridViewMinEmission.DataSource = ds.Tables["Emission"].DefaultView;
-            //f.ShowDialog();
+            f.dataGridViewMinEmission.DataSource = min_sources.ToList();
+            f.ShowDialog();
         }
 
         private void buttonMaxEmission_Click(object sender, EventArgs e)
         {
-            //string SqlText = $"SELECT Name_Source, MAX(Count_Emission) AS \'Максимальные выбросы\' " +
-            //                 $"FROM Emission " +
-            //                 $"JOIN Source ON Emission.ID_Source = Source.ID_Source " +
-            //                 $"GROUP BY Name_Source " +
-            //                 $"ORDER BY MIN(Count_Emission)";
+            MaxEmission f = new MaxEmission();
 
-            //MaxEmission f = new MaxEmission();
+            MyDbContext context = new MyDbContext();
+            var max_sources = from s in context.Sources
+                              join x in context.Emissions on s.Id equals x.SourceId
+                              group new { s, x } by new { s.Id, s.Name }
+                              into g
+                              select new
+                              {
+                                  Name_Source = g.Key.Name,
+                                  Min_Emission = g.Max(t => t.x.Count)
+                              };
 
-            //SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds, "Emission");
-            //f.dataGridViewMaxEmission.DataSource = ds.Tables["Emission"].DefaultView;
-            //f.ShowDialog();
+            f.dataGridViewMaxEmission.DataSource = max_sources.ToList();
+            f.ShowDialog();
         }
 
         private void buttonAvgEmission_Click(object sender, EventArgs e)
         {
-            //string SqlText = $"SELECT Name_Source, AVG(Count_Emission) AS \'Средние выбросы\' " +
-            //                 $"FROM Emission " +
-            //                 $"JOIN Source ON Emission.ID_Source = Source.ID_Source " +
-            //                 $"GROUP BY Name_Source " +
-            //                 $"ORDER BY MIN(Count_Emission)";
+            AverageEmission f = new AverageEmission();
 
-            //AverageEmission f = new AverageEmission();
+            MyDbContext context = new MyDbContext();
+            var ave_sources = from s in context.Sources
+                              join x in context.Emissions on s.Id equals x.SourceId
+                              group new { s, x } by new { s.Id, s.Name }
+                              into g
+                              select new
+                              {
+                                  Name_Source = g.Key.Name,
+                                  Min_Emission = g.Average(t => t.x.Count)
+                              };
 
-            //SqlDataAdapter da = new SqlDataAdapter(SqlText, ConnStr);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds, "Emission");
-            //f.dataGridViewAverageEmission.DataSource = ds.Tables["Emission"].DefaultView;
-            //f.ShowDialog();
+            f.dataGridViewAverageEmission.DataSource = ave_sources.ToList();
+            f.ShowDialog();
         }
     }
 }
